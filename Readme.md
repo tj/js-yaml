@@ -1,7 +1,11 @@
 
 # YAML
 
-JavaScript YAML parser.
+JavaScript YAML parser, fast and tiny.
+
+# Examples
+
+    YAML.eval(string_of_yaml)
 
 # License 
 
