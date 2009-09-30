@@ -1,0 +1,16 @@
+---
+  # just a comment
+  list: ['foo', 'bar']
+  hash: { foo: "bar", n: 1 }
+  lib:
+    - lib/cart.js
+    - lib/cart.foo.js
+  specs:
+    - spec/cart.spec.js
+    - spec/cart.foo.spec.js
+    # - Commented out
+  environments:
+    all:
+      options:
+        failuresOnly: true
+        verbose: false
