@@ -23,6 +23,20 @@ describe 'YAML'
       YAML.eval(yml).should.eql { enabled: true }
     end
     
+    it 'should parse inline lists'
+      yml = '---              \n\
+        specs: ["foo", "bar"] \n\
+      '
+      YAML.eval(yml).should.eql { specs: ['foo', 'bar'] }
+    end
+    
+    it 'should parse hashes'
+      yml = '---              \n\
+        specs: { foo: "bar" } \n\
+      '
+      YAML.eval(yml).should.eql { specs: { foo: "bar" }}
+    end
+    
     it 'should parse lists'
       yml = '---        \n\
         specs:          \n\
