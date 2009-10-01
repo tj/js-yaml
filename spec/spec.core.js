@@ -31,6 +31,16 @@ describe 'YAML'
       end
     end
     
+    describe 'strings'
+      it 'should evaluate to literal strings when using double quotes'
+        YAML.eval('foo: "bar\n"').should.eql { foo: "bar\n" }
+      end
+      
+      it 'should evaluate to literal strings when using single quotes'
+        YAML.eval("foo: 'bar'").should.eql { foo: 'bar' }
+      end
+    end
+    
     describe 'booleans'
       describe 'true'
         it 'should evaluate to true'
