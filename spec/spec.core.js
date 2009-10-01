@@ -48,9 +48,33 @@ describe 'YAML'
         end
       end
       
+      describe 'yes'
+        it 'should evaluate to true'
+          YAML.eval('foo: yes').should.eql { foo: true }
+        end
+      end
+      
+      describe 'on'
+        it 'should evaluate to true'
+          YAML.eval('foo: on').should.eql { foo: true }
+        end
+      end
+      
       describe 'false'
         it 'should evaluate to false'
           YAML.eval('foo: false').should.eql { foo: false }
+        end
+      end
+      
+      describe 'off'
+        it 'should evaluate to false'
+          YAML.eval('foo: off').should.eql { foo: false }
+        end
+      end
+      
+      describe 'no'
+        it 'should evaluate to false'
+          YAML.eval('foo: no').should.eql { foo: false }
         end
       end
     end
