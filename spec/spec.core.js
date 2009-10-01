@@ -83,6 +83,25 @@ describe 'YAML'
         '
         YAML.eval(yml).should.eql { one: ['a', 'b', 'c'], two: [1, 2] }
       end
+      
+      it 'should parse sequences of maps'
+        yml = '---                       \n\
+          pages:                         \n\
+            -                            \n\
+              name: Home                 \n\
+              title: Welcome to our site \n\
+            -                            \n\
+              name: Contact              \n\
+              title: Contact Us          \n\
+        '
+        expected = {
+          pages: [
+              { name: 'Home', title: 'Welcome to our site' },
+              { name: 'Contact', title: 'Contact Us' }
+            ]
+        }
+        YAML.eval(yml).should.eql expected
+      end
     end
     
     describe 'pairs'
