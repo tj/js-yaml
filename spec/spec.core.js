@@ -85,8 +85,8 @@ describe 'YAML'
       end
     end
     
-    describe 'maps'
-      it 'should parse a single pair'
+    describe 'pairs'
+      it 'should parse when only one is present'
         YAML.eval('foo: bar').should.eql { foo: "bar" }  
       end
       
@@ -107,6 +107,17 @@ describe 'YAML'
           modules:        \n\
             - panels      \n\
             - token       \n\
+        '
+        YAML.eval(yml).should.eql { boot: false, enabled: true, modules: ['panels', 'token'] }
+      end
+      
+      it 'should parse sequences followed by maps'
+        yml = '---        \n\
+          modules:        \n\
+            - panels      \n\
+            - token       \n\
+          boot: false     \n\
+          enabled: true   \n\
         '
         YAML.eval(yml).should.eql { boot: false, enabled: true, modules: ['panels', 'token'] }
       end
