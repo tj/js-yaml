@@ -9,7 +9,7 @@ describe 'YAML'
   end
   
   describe '.eval()'
-    it 'should ignore comments'
+    it 'should ignore single-line comments'
       YAML.eval('# enabled: true').should.eql {}
     end
     
@@ -17,12 +17,25 @@ describe 'YAML'
       YAML.eval('enabled: true').should.eql { enabled: true }
     end
     
+    it 'should parse integers'
+      YAML.eval('n: 1').should.eql { n: 1 }
+    end
+    
+    it 'should parse floats'
+      YAML.eval('n: 1.5').should.eql { n: 1.5 }
+    end
+    
+    it 'should parse bools'
+      YAML.eval('foo: true').should.eql { foo: true }
+      YAML.eval('foo: false').should.eql { foo: false }
+    end
+    
     it 'should parse inline lists'
       YAML.eval('specs: ["foo", "bar"]').should.eql { specs: ['foo', 'bar'] }
     end
     
     it 'should parse hashes'
-      YAML.eval('specs: { foo: "bar" }').should.eql { specs: { foo: "bar" }}
+      YAML.eval('specs: { foo: "bar" }').should.eql { specs: { foo: 'bar' }}
     end
     
     it 'should parse lists'
