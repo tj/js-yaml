@@ -140,6 +140,27 @@ describe 'YAML'
         '
         YAML.eval(yml).should.eql { boot: false, enabled: true, modules: ['panels', 'token'] }
       end
+      
+      it 'should parse nested maps'
+        yml = '---                  \n\
+          environments:             \n\
+            rhino:                  \n\
+              options:              \n\
+                failuresOnly: true  \n\
+                verbose: false       \n\
+        '
+        expected = {
+          environments: {
+            rhino: {
+              options: {
+                failuresOnly: true,
+                verbose: false
+              }
+            }
+          }
+        }
+        YAML.eval(yml).should.eql expected
+      end
     end
   end
 end
