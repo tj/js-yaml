@@ -31,14 +31,6 @@ describe 'YAML'
       end
     end
     
-    it 'should parse inline lists'
-      YAML.eval('specs: ["foo", "bar"]').should.eql { specs: ['foo', 'bar'] }
-    end
-    
-    it 'should parse hashes'
-      YAML.eval('specs: { foo: "bar" }').should.eql { specs: { foo: 'bar' }}
-    end
-    
     describe 'booleans'
       describe 'true'
         it 'should evaluate to true'
