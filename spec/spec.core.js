@@ -117,9 +117,13 @@ describe 'YAML'
       end
     end
     
-    describe 'pairs'
+    describe 'maps'
       it 'should parse when only one is present'
         YAML.eval('foo: bar').should.eql { foo: "bar" }  
+      end
+      
+      it 'should allow spaces in key ids'
+        YAML.eval('foo bar: bar').should.eql { 'foo bar': "bar" }  
       end
       
       it 'should parse when several pairs are present'
