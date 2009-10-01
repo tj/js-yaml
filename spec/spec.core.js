@@ -10,31 +10,19 @@ describe 'YAML'
   
   describe '.eval()'
     it 'should ignore comments'
-      yml = '---        \n\
-        # enabled: true \n\
-      '
-      YAML.eval(yml).should.eql {}
+      YAML.eval('# enabled: true').should.eql {}
     end
     
     it 'should parse pairs'
-      yml = '---        \n\
-        enabled: true \n\
-      '
-      YAML.eval(yml).should.eql { enabled: true }
+      YAML.eval('enabled: true').should.eql { enabled: true }
     end
     
     it 'should parse inline lists'
-      yml = '---              \n\
-        specs: ["foo", "bar"] \n\
-      '
-      YAML.eval(yml).should.eql { specs: ['foo', 'bar'] }
+      YAML.eval('specs: ["foo", "bar"]').should.eql { specs: ['foo', 'bar'] }
     end
     
     it 'should parse hashes'
-      yml = '---              \n\
-        specs: { foo: "bar" } \n\
-      '
-      YAML.eval(yml).should.eql { specs: { foo: "bar" }}
+      YAML.eval('specs: { foo: "bar" }').should.eql { specs: { foo: "bar" }}
     end
     
     it 'should parse lists'
