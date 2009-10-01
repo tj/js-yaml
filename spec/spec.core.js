@@ -84,6 +84,15 @@ describe 'YAML'
         YAML.eval(yml).should.eql { one: ['a', 'b', 'c'], two: [1, 2] }
       end
       
+      it 'should parse sequences of sequences'
+        yml = '---                       \n\
+          pages:                         \n\
+            - [1, 2]                     \n\
+            - [3, 4]                     \n\
+        '
+        YAML.eval(yml).should.eql { pages: [[1,2], [3,4]] }
+      end
+      
       it 'should parse sequences of maps'
         yml = '---                       \n\
           pages:                         \n\
