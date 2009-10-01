@@ -128,6 +128,11 @@ describe 'YAML'
         YAML.eval('foo bar: bar').should.eql { 'foo bar': "bar" }  
       end
       
+      it 'should allow spaces before the semicolon'
+        YAML.eval('foo: bar').should.eql { foo: "bar" }  
+        YAML.eval('foo bar   : bar').should.eql { 'foo bar': "bar" }  
+      end
+      
       it 'should parse when several pairs are present'
         yml = '---        \n\
           boot: false     \n\
