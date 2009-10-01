@@ -142,11 +142,11 @@ describe 'YAML'
       end
       
       it 'should parse nested maps'
-        yml = '---                  \n\
-          environments:             \n\
-            rhino:                  \n\
-              options:              \n\
-                failuresOnly: true  \n\
+        yml = '---                   \n\
+          environments:              \n\
+            rhino:                   \n\
+              options:               \n\
+                failuresOnly: true   \n\
                 verbose: false       \n\
         '
         expected = {
@@ -155,6 +155,35 @@ describe 'YAML'
               options: {
                 failuresOnly: true,
                 verbose: false
+              }
+            }
+          }
+        }
+        YAML.eval(yml).should.eql expected
+      end
+      
+      it 'should parse indentation based maps'
+        yml = '---                   \n\
+          environments:              \n\
+            rhino:                   \n\
+              options:               \n\
+                failuresOnly: true   \n\
+                verbose: false       \n\
+            dom:                     \n\
+              options:               \n\
+                failuresOnly: false  \n\
+        '                           
+        expected = {
+          environments: {
+            rhino: {
+              options: {
+                failuresOnly: true,
+                verbose: false
+              }
+            },
+            dom: {
+              options: {
+                failuresOnly: false
               }
             }
           }
