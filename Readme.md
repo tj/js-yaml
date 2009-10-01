@@ -23,7 +23,7 @@ fork the project and submit a patch :)
 
 Grab [JSpec](http://jspec.info) and execute the following command:
 
-  $ jspec run --rhino
+    $ jspec run --rhino
 
 # License 
 
