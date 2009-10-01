@@ -10,8 +10,12 @@ describe 'YAML'
   
   describe '.eval()'
     describe 'comments'
-      it 'should be ignored'
+      it 'should be ignored when the entire line is a comment'
         YAML.eval('# enabled: true').should.eql {}
+      end
+      
+      it 'should be ignored when following additional yaml'
+        YAML.eval('enabled: true # Enable something').should.eql { enabled: true }
       end
     end
     
