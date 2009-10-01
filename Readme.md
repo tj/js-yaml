@@ -6,6 +6,12 @@ JavaScript YAML parser, fast and tiny.
 # Examples
 
     YAML.eval(string_of_yaml)
+    
+# Testing
+
+Grab [JSpec](http://jspec.info) and execute the following command:
+
+  $ jspec run --rhino
 
 # License 
 

@@ -2,9 +2,9 @@
 describe 'YAML'
   describe '.strip()'
     it 'should strip leading / trailing whitespace'
-      YAML.strip('foo   ').should.be 'foo'
-      YAML.strip('   foo').should.be 'foo'
-      YAML.strip('   foo   ').should.be 'foo'
+      YAML.strip('foo   ').should.eql 'foo'
+      YAML.strip('   foo').should.eql 'foo'
+      YAML.strip('   foo   ').should.eql 'foo'
     end  
   end
   
@@ -102,6 +102,10 @@ describe 'YAML'
         }
         YAML.eval(yml).should.eql expected
       end
+      
+      it 'should parse inline sequences'
+        YAML.eval('foo: [1, 2, 3]').should.eql { foo: [1,2,3] }
+      end
     end
     
     describe 'pairs'
@@ -115,6 +119,10 @@ describe 'YAML'
           enabled: true   \n\
         '
         YAML.eval(yml).should.eql { boot: false, enabled: true }
+      end
+      
+      it 'should parse inline pairs'
+        YAML.eval('foo: { n: 1 }').should.eql { foo: { n: 1 }}
       end
     end
     
