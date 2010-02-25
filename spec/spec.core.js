@@ -34,7 +34,7 @@ describe 'yaml'
   
   describe 'key: val'
     it 'should convert to an object'
-      var doc = yaml.eval('a: 1\nb: 2\n')
+      var doc = yaml.eval('a: 1\nb:  2 \n')
       doc.should.eql { a: 1, b: 2 }
     end
   end
@@ -43,6 +43,13 @@ describe 'yaml'
     it 'should be ignored as a comment'
       yaml.eval('# foo').should.be_undefined
       yaml.eval('1 # foo').should.equal 1
+    end
+  end
+  
+  describe 'hash with list'
+    it 'should work'
+      var expected = { pets: ['niko', 'simon'] }
+      yaml.eval(fixture('hash.list.yml')).should.eql expected
     end
   end
 end
