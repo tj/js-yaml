@@ -5,4 +5,11 @@ describe 'yaml'
       yaml.version.should.match(/^\d+\.\d+\.\d+$/)
     end
   end
+  
+  describe '-'
+    it 'should convert to an array'
+      var doc = yaml.eval('- 1\n- 2\n- 3\n')
+      doc.should.eql ['1', '2', '3']
+    end
+  end
 end

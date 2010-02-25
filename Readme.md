@@ -1,7 +1,7 @@
 
 # YAML
 
-JavaScript YAML parser, fast and tiny. Although this implementation
+CommonJS YAML parser, fast and tiny. Although this implementation
 does not currently support the entire YAML specification, feel free to
 fork the project and submit a patch :) 
 
