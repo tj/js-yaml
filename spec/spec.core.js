@@ -66,10 +66,10 @@ describe 'yaml'
     end
   end
   
-  describe 'multiple lists'
+  describe 'list with lists'
     it 'should work'
       var expected = [[1,2], [3,4], [5]]
-      yaml.eval(fixture('multiple.lists.yml')).should.eql expected
+      yaml.eval(fixture('list.lists.yml')).should.eql expected
     end
   end
   
