@@ -95,7 +95,7 @@ describe 'yaml'
     
     describe 'with nested hash'
       it 'should work'
-        assert('hash.hash', { pets: { niko: 2, simon: 14 }})
+        assert('hash.hash', { pets: { niko: 2, simon: 14 }, birthMonths: { niko: "May", simon: "June" }})
       end
     end
   end
