@@ -152,6 +152,10 @@ describe 'yaml'
       it 'should work when empty'
         yaml.eval('{}').should.eql {}
       end
+      
+      it 'should fail when comma is missing'
+        -{ assert('hash.inline.invalid') }.should.throw_error 'expected comma'
+      end
     end
     
     describe 'with nested list'
