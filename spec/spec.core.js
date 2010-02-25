@@ -144,6 +144,20 @@ describe 'yaml'
       assert('hash', { a: 1, b: 2 })
     end
     
+    describe 'keys'
+      it 'should allow words'
+        yaml.eval('foo: "bar"').should.eql { foo: 'bar' }
+      end
+      
+      it 'should allow underscores'
+        yaml.eval('user_name: "tj"').should.eql { user_name: 'tj' }
+      end
+      
+      it 'should allow spaces'
+        yaml.eval('user name: "tj"').should.eql { 'user name': 'tj' }
+      end
+    end
+    
     describe 'inline'
       it 'should work'
         assert('hash.inline', { name: 'tj', email: 'tj@vision-media.ca' })
