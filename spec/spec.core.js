@@ -50,6 +50,44 @@ describe 'yaml'
     end
   end
   
+  describe 'bools'
+    describe 'true'
+      it 'true'
+        yaml.eval('true').should.equal true
+      end
+      
+      it 'yes'
+        yaml.eval('yes').should.equal true
+      end
+      
+      it 'on'
+        yaml.eval('on').should.equal true
+      end
+      
+      it 'enabled'
+        yaml.eval('enabled').should.equal true
+      end
+    end
+    
+    describe 'false'
+      it 'false'
+        yaml.eval('false').should.equal false
+      end
+      
+      it 'no'
+        yaml.eval('no').should.equal false
+      end
+      
+      it 'off'
+        yaml.eval('off').should.equal false
+      end
+      
+      it 'disabled'
+        yaml.eval('disabled').should.equal false
+      end
+    end
+  end
+  
   describe 'indentation'
     describe 'when invalid'
       it 'should throw an error'

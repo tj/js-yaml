@@ -11,11 +11,12 @@ fork the project and submit a patch :)
     
 # Currently Supports
 
-  * Sequences
-  * Maps
   * Comments
+  * Sequences (arrays)
+  * Maps (hashes)
   * Nesting
   * Primitive scalars (integers, floats, booleans, etc)
+  * Extended bools (enabled, disabled, yes, no, on, off, true, false)
   * Inline sequences ([foo, bar])
   * Inline maps ({ foo: bar })
     
