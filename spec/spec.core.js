@@ -50,13 +50,6 @@ describe 'yaml'
     end
   end
   
-  describe '# foo'
-    it 'should be ignored as a comment'
-      yaml.eval('# foo').should.be_undefined
-      yaml.eval('1 # foo').should.equal 1
-    end
-  end
-  
   describe 'indentation'
     describe 'when invalid'
       it 'should throw an error'
@@ -65,6 +58,11 @@ describe 'yaml'
     end
   end
   
+  describe 'comments'
+    it 'should work'
+      assert('comments', [1,2,3])
+    end
+  end
   
   describe 'list'
     it 'should work'
