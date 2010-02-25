@@ -8,8 +8,13 @@ describe 'yaml'
   
   describe 'int'
     it 'should convert to a number'
-      var doc = yaml.eval('1')
-      doc.should.eql 1
+      yaml.eval('1').should.equal 1
+    end
+  end
+  
+  describe 'float'
+    it 'should convert to a number'
+      yaml.eval('1.5').should.equal 1.5
     end
   end
   
