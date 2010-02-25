@@ -111,8 +111,12 @@ describe 'yaml'
         assert('list.inline', ['tj', 23])
       end
       
+      it 'should work when empty'
+        yaml.eval('[]').should.eql []
+      end
+      
       it 'should fail when comma is missing'
-        -{ assert('list.inline.invalid') }.should.throw_error 'inline list missing comma'
+        -{ assert('list.inline.invalid') }.should.throw_error 'expected comma'
       end
     end
     
@@ -143,6 +147,10 @@ describe 'yaml'
     describe 'inline'
       it 'should work'
         assert('hash.inline', { name: 'tj', email: 'tj@vision-media.ca' })
+      end
+      
+      it 'should work when empty'
+        yaml.eval('{}').should.eql {}
       end
     end
     
