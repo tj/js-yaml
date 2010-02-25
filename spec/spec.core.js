@@ -38,4 +38,11 @@ describe 'yaml'
       doc.should.eql { a: 1, b: 2 }
     end
   end
+  
+  describe '# foo'
+    it 'should be ignored as a comment'
+      yaml.eval('# foo').should.be_undefined
+      yaml.eval('1 # foo').should.equal 1
+    end
+  end
 end
