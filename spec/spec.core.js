@@ -44,8 +44,8 @@ describe 'yaml'
   
   describe '"string"'
     it 'should convert to a string'
-      var doc = yaml.eval('"foo"')
-      doc.should.eql 'foo'
+      yaml.eval('"foo"').should.eql 'foo'
+      yaml.eval("'foo'").should.eql 'foo'
     end
   end
   
