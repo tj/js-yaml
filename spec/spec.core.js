@@ -130,7 +130,7 @@ describe 'yaml'
     
     describe 'with nested lists'
       it 'should work'
-        assert('list.lists', [[1,2], [3,4, [5]]])
+        assert('list.lists', [1, [2, [3]], 4])
       end
     end
   end
