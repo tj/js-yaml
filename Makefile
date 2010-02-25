@@ -2,6 +2,6 @@
 all: test
 	
 test:
-	jspec run --rhino
+	node spec/node.js
 	
 .PHONY: test

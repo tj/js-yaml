@@ -7,7 +7,7 @@ fork the project and submit a patch :)
 
 # Usage
 
-    YAML.eval(string_of_yaml)
+    require('yaml').eval(string_of_yaml)
     
 # Currently Supports
 
