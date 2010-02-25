@@ -30,6 +30,11 @@ describe 'yaml'
       var doc = yaml.eval('- 1  \n- 2\n- 3\n')
       doc.should.eql [1,2,3]
     end
+    
+    it 'should support nesting lists'
+      var doc = yaml.eval('-\n  - 1\n  - 2\n')
+      doc.should.eql [[1,2]]
+    end
   end
   
   describe 'key: val'
