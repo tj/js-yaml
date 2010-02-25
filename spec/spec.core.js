@@ -171,6 +171,20 @@ describe 'yaml'
         yaml.eval('{}').should.eql {}
       end
       
+      describe 'keys'
+        it 'should allow words'
+          yaml.eval('{ foo: "bar" }').should.eql { foo: 'bar' }
+        end
+
+        it 'should allow underscores'
+          yaml.eval('{ user_name: "tj" }').should.eql { user_name: 'tj' }
+        end
+
+        it 'should allow spaces'
+          yaml.eval('{ user name: "tj" }').should.eql { 'user name': 'tj' }
+        end
+      end
+      
       it 'should fail when comma is missing'
         -{ assert('hash.inline.invalid') }.should.throw_error 'expected comma'
       end
