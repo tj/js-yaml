@@ -174,5 +174,11 @@ describe 'yaml'
       end
     end
   end
+  
+  describe 'documents'
+    it 'should work'
+      assert('document', [1,2,3])
+    end
+  end
 
 end
