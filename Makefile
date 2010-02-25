@@ -2,6 +2,6 @@
 all: test
 	
 test:
-	node spec/node.js
+	@node spec/node.js
 	
 .PHONY: test
