@@ -1,23 +1,22 @@
 
 # YAML
 
-JavaScript YAML parser, fast and tiny. Although this implementation
+CommonJS JavaScript YAML parser, fast and tiny. Although this implementation
 does not currently support the entire YAML specification, feel free to
 fork the project and submit a patch :) 
 
 # Usage
 
-    YAML.eval(string_of_yaml)
+    require('yaml').eval(string_of_yaml)
     
 # Currently Supports
 
-  * Sequences
-  * Maps
   * Comments
+  * Sequences (arrays)
+  * Maps (hashes)
   * Nesting
   * Primitive scalars (integers, floats, booleans, etc)
-  * Inline sequences ([foo, bar])
-  * Inline maps ({ foo: bar })
+  * Extended bools (enabled, disabled, yes, no, on, off, true, false)
     
 # Testing
 
