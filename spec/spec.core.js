@@ -56,7 +56,7 @@ describe 'yaml'
   
   describe 'list with list'
     it 'should work'
-      var expected = [[1,2,3,[4,5]]]
+      var expected = [[1,2,3,[4,5]], [1]]
       yaml.eval(fixture('list.list.yml')).should.eql expected
     end
   end
