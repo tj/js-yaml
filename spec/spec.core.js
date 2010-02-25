@@ -12,23 +12,23 @@ describe 'yaml'
   //   end
   // end
   
-  describe 'lexer'
-    describe 'indentation'
-      it 'should work'
-        var tokens = yaml.tokenize('\n  1\n  2\n    3\n      4\n')
-        tokens[0][0].should.eql 'indent'
-        tokens[1][0].should.eql 'int'
-        tokens[2][0].should.eql 'int'
-        tokens[3][0].should.eql 'indent'
-        tokens[4][0].should.eql 'int'
-        tokens[5][0].should.eql 'indent'
-        tokens[6][0].should.eql 'int'
-        tokens[7][0].should.eql 'dedent'
-        tokens[8][0].should.eql 'dedent'
-        tokens[9][0].should.eql 'dedent'
-      end
-    end
-  end
+  // describe 'lexer'
+  //   describe 'indentation'
+  //     it 'should work'
+  //       var tokens = yaml.tokenize('\n  1\n  2\n    3\n      4\n')
+  //       tokens[0][0].should.eql 'indent'
+  //       tokens[1][0].should.eql 'int'
+  //       tokens[2][0].should.eql 'int'
+  //       tokens[3][0].should.eql 'indent'
+  //       tokens[4][0].should.eql 'int'
+  //       tokens[5][0].should.eql 'indent'
+  //       tokens[6][0].should.eql 'int'
+  //       tokens[7][0].should.eql 'dedent'
+  //       tokens[8][0].should.eql 'dedent'
+  //       tokens[9][0].should.eql 'dedent'
+  //     end
+  //   end
+  // end
   
   // 
   // describe 'int'
@@ -86,15 +86,15 @@ describe 'yaml'
   // 
   
   describe 'list'
-    describe 'with nested list'
-      it 'should work'
-        assert('list.list', [[1,2,3,[4,5]]])
-      end
-    end
+    // describe 'with nested list'
+    //   it 'should work'
+    //     assert('list.list', [[1,2,3,[4,5]]])
+    //   end
+    // end
     
     describe 'with nested lists'
       it 'should work'
-        assert('list.lists', [[1,2], [3,4], [5]])
+        assert('list.lists', [[1,2], [3,4, [5]], [6]])
       end
     end
   end
