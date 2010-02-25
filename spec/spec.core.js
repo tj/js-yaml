@@ -126,7 +126,7 @@ describe 'yaml'
       end
       
       it 'should fail when comma is missing'
-        -{ assert('list.inline.invalid') }.should.throw_error 'expected comma'
+        -{ assert('list.inline.invalid') }.should.throw_error 'expected comma, near "1]"'
       end
     end
     
@@ -196,7 +196,7 @@ describe 'yaml'
       end
       
       it 'should fail when comma is missing'
-        -{ assert('hash.inline.invalid') }.should.throw_error 'expected comma'
+        -{ assert('hash.inline.invalid') }.should.throw_error(/expected comma, near "email: /)
       end
     end
     
