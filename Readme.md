@@ -17,8 +17,6 @@ fork the project and submit a patch :)
   * Nesting
   * Primitive scalars (integers, floats, booleans, etc)
   * Extended bools (enabled, disabled, yes, no, on, off, true, false)
-  * Inline sequences ([foo, bar])
-  * Inline maps ({ foo: bar })
     
 # Testing
 
