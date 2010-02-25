@@ -50,25 +50,6 @@ describe 'yaml'
     end
   end
   
-  describe '-'
-    it 'should convert to an array'
-      var doc = yaml.eval('- 1  \n- 2\n- 3\n')
-      doc.should.eql [1,2,3]
-    end
-    
-    it 'should support nesting lists'
-      var doc = yaml.eval('-\n  - 1\n  - 2\n')
-      doc.should.eql [[1,2]]
-    end
-  end
-  
-  describe 'key: val'
-    it 'should convert to an object'
-      var doc = yaml.eval('a: 1\nb:  2 \n')
-      doc.should.eql { a: 1, b: 2 }
-    end
-  end
-  
   describe '# foo'
     it 'should be ignored as a comment'
       yaml.eval('# foo').should.be_undefined
@@ -86,6 +67,10 @@ describe 'yaml'
   
   
   describe 'list'
+    it 'should work'
+      assert('list', [1,2,3])  
+    end
+    
     describe 'with nested list'
       it 'should work'
         assert('list.list', [[1,2,3,[4,5]]])
@@ -98,19 +83,23 @@ describe 'yaml'
       end
     end
   end
+  
+  describe 'hash'
+    it 'should work'
+      assert('hash', { a: 1, b: 2 })
+    end
+    
+    describe 'with nested list'
+      it 'should work'
+        assert('hash.list', { pets: ['niko', 'simon'] })
+      end
+    end
+    
+    describe 'with nested hash'
+      it 'should work'
+        assert('hash.hash', { pets: { niko: 2, simon: 14 }})
+      end
+    end
+  end
 
-  
-  describe 'hash with list'
-    it 'should work'
-      var expected = { pets: ['niko', 'simon'] }
-      yaml.eval(fixture('hash.list.yml')).should.eql expected
-    end
-  end
-  
-  describe 'hash with hash'
-    it 'should work'
-      var expected = { pets: { niko: 2, simon: 14 }}
-      yaml.eval(fixture('hash.hash.yml')).should.eql expected
-    end
-  end
 end
