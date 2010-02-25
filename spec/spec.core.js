@@ -1,5 +1,11 @@
 
 describe 'yaml'
+  before
+    assert = function(path, expected) {
+      yaml.eval(fixture(path + '.yml')).should.eql expected
+    }
+  end
+  
   // describe '.version'
   //   it 'should be a triplet'
   //     yaml.version.should.match(/^\d+\.\d+\.\d+$/)
@@ -78,19 +84,21 @@ describe 'yaml'
   //   end
   // end
   // 
-  // describe 'list with list'
-  //   it 'should work'
-  //     var expected = [[1,2,3,[4,5]]]
-  //     yaml.eval(fixture('list.list.yml')).should.eql expected
-  //   end
-  // end
   
-  describe 'list with lists'
-    it 'should work'
-      var expected = [[1,2], [3,4], [5]]
-      yaml.eval(fixture('list.lists.yml')).should.eql expected
+  describe 'list'
+    describe 'with nested list'
+      it 'should work'
+        assert('list.list', [[1,2,3,[4,5]]])
+      end
+    end
+    
+    describe 'with nested lists'
+      it 'should work'
+        assert('list.lists', [[1,2], [3,4], [5]])
+      end
     end
   end
+
   // 
   // describe 'hash with list'
   //   it 'should work'
