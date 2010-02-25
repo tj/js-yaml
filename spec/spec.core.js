@@ -8,7 +8,7 @@ describe 'yaml'
   
   describe '-'
     it 'should convert to an array'
-      var doc = yaml.eval('- 1\n- 2\n- 3\n')
+      var doc = yaml.eval('- 1  \n- 2\n- 3\n')
       doc.should.eql [1,2,3]
     end
   end
