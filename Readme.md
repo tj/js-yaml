@@ -21,9 +21,9 @@ fork the project and submit a patch :)
     
 # Testing
 
-Grab [JSpec](http://jspec.info) and execute the following command:
+Update git submodules and run:
 
-    $ jspec run --rhino
+    $ make test
 
 # License 
 
