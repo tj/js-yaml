@@ -34,8 +34,8 @@ describe 'yaml'
   
   describe 'key: val'
     it 'should convert to an object'
-      var doc = yaml.eval('a: 1\n')
-      doc.should.eql { a: 1 }
+      var doc = yaml.eval('a: 1\nb: 2\n')
+      doc.should.eql { a: 1, b: 2 }
     end
   end
   
