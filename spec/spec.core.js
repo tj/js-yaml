@@ -30,7 +30,6 @@ describe 'yaml'
     end
   end
   
-  
   describe 'int'
     it 'should convert to a number'
       yaml.eval('1').should.equal 1
@@ -105,6 +104,12 @@ describe 'yaml'
   describe 'list'
     it 'should work'
       assert('list', [1,2,3])  
+    end
+    
+    describe 'inline'
+      it 'should work'
+        assert('list.inline', ['tj', 23])
+      end
     end
     
     describe 'with nested list'
