@@ -116,6 +116,12 @@ describe 'yaml'
       end
     end
     
+    describe 'with nested hash'
+      it 'should work'
+        assert('list.hash', [{ name: 'tj' }, { name: 'simon' }])
+      end
+    end
+    
     describe 'with nested list'
       it 'should work'
         assert('list.list', [[1,2,3,[4,5]]])
