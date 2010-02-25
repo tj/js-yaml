@@ -46,6 +46,14 @@ describe 'yaml'
     end
   end
   
+  describe 'indentation'
+    describe 'when invalid'
+      it 'should throw an error'
+        -{ yaml.eval(fixture('list.invalid.yml')) }.should.throw_error 'invalid indentation, got 3 instead of 2'
+      end
+    end
+  end
+  
   describe 'list with list'
     it 'should work'
       var expected = [[1,2,3,[4,5]]]
