@@ -52,4 +52,11 @@ describe 'yaml'
       yaml.eval(fixture('hash.list.yml')).should.eql expected
     end
   end
+  
+  describe 'hash with hash'
+    it 'should work'
+      var expected = { pets: { niko: 2, simon: 14 }}
+      yaml.eval(fixture('hash.hash.yml')).should.eql expected
+    end
+  end
 end
