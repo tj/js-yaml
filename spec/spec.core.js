@@ -149,6 +149,10 @@ describe 'yaml'
         assert('hash.inline', { name: 'tj', email: 'tj@vision-media.ca' })
       end
       
+      it 'should ignore whitespace'
+        assert('hash.inline.whitespace', { tj: { name: 'tj', age: 23 }})
+      end
+      
       it 'should work when empty'
         yaml.eval('{}').should.eql {}
       end
