@@ -110,6 +110,10 @@ describe 'yaml'
       it 'should work'
         assert('list.inline', ['tj', 23])
       end
+      
+      it 'should fail when comma is missing'
+        -{ assert('list.inline.invalid') }.should.throw_error 'inline list missing comma'
+      end
     end
     
     describe 'with nested list'
