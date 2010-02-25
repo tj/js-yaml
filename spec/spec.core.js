@@ -46,6 +46,13 @@ describe 'yaml'
     end
   end
   
+  describe 'list with list'
+    it 'should work'
+      var expected = [[1,2,3]]
+      yaml.eval(fixture('list.list.yml')).should.eql expected
+    end
+  end
+  
   describe 'hash with list'
     it 'should work'
       var expected = { pets: ['niko', 'simon'] }
