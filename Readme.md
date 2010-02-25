@@ -14,6 +14,8 @@ fork the project and submit a patch :)
   * Comments
   * Sequences (arrays)
   * Maps (hashes)
+  * Inline sequences
+  * Inline maps
   * Nesting
   * Primitive scalars (integers, floats, booleans, etc)
   * Extended bools (enabled, disabled, yes, no, on, off, true, false)
