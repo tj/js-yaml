@@ -140,6 +140,12 @@ describe 'yaml'
       assert('hash', { a: 1, b: 2 })
     end
     
+    describe 'inline'
+      it 'should work'
+        assert('hash.inline', { name: 'tj', email: 'tj@vision-media.ca' })
+      end
+    end
+    
     describe 'with nested list'
       it 'should work'
         assert('hash.list', { pets: ['niko', 'simon'] })
