@@ -19,6 +19,13 @@ fork the project and submit a patch :)
   * Nesting
   * Primitive scalars (integers, floats, booleans, etc)
   * Extended bools (enabled, disabled, yes, no, on, off, true, false)
+  
+## Installation
+
+  Install the [Kiwi package manager for nodejs](http://github.com/visionmedia/kiwi)
+  and run:
+  
+      $ kiwi -v install yaml
     
 # Testing
 
