@@ -1,6 +1,5 @@
 
-process.mixin(require('sys'))
-require.paths.unshift('spec', './spec/lib/lib', 'lib')
+require.paths.unshift('spec', './spec/lib', 'lib')
 require('jspec')
 yaml = require('yaml')
 
