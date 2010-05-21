@@ -1,5 +1,10 @@
-{
-  "name": "Yaml",
-  "description": "High performance YAML parser",
-  "version": "0.1.0"
+{ "name": "yaml"
+, "description": "High performance YAML parser"
+, "author" : "visionmedia"
+, "version": "0.1.0"
+, "main": "./lib/yaml.js"
+, "repository" : { "type" : "git"
+                 , "url" : "http://github.com/visionmedia/js-yaml.git"
+                 }
+, "bugs" : { "web" : "http://github.com/visionmedia/js-yaml/issues" }
 }
