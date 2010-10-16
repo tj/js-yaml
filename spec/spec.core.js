@@ -106,16 +106,6 @@ describe 'yaml'
       assert('list', [1,2,3])  
     end
     
-    it 'should work with arbitrary text'
-      assert('hash.text', {
-        user: {
-          name: 'tj',
-          date: '1987-05-25',
-          position: 'web developer and ceo of Vision Media'
-        }
-      })
-    end
-    
     describe 'inline'
       it 'should work'
         assert('list.inline', ['tj', 23])
