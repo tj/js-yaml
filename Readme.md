@@ -22,10 +22,7 @@ fork the project and submit a patch :)
   
 ## Installation
 
-  Install the [Kiwi package manager for nodejs](http://github.com/visionmedia/kiwi)
-  and run:
-  
-      $ kiwi -v install yaml
+    $ npm install yaml
     
 # Testing
 
