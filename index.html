@@ -1,2 +1,28 @@
 <script>window.exports = {}</script>
 <script src="lib/yaml.js"></script>
+<pre>
+var config = YAML.parse('\
+	pets:\n\
+		niko: 2\n\
+		simon: 14\n\
+	birthMonths:\n\
+		niko: "May"\n\
+		simon: "June"\n\
+');
+
+<script>var config = YAML.parse('\
+pets:\n\
+  niko: 2\n\
+  simon: 14\n\
+birthMonths:\n\
+  niko: "May"\n\
+  simon: "June"\n\
+');
+
+document.write(
+	'config.pets.niko: ' + config.pets.niko + '\n' +
+	'config.birthMonths.niko: ' + config.birthMonths.niko
+);
+
+</script>
+</pre>
