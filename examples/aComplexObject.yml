@@ -1,0 +1,23 @@
+- 
+  anObject: 
+    asubObj: &object3
+      subsub: x
+- &object4
+  x: abc
+  y: 
+    x: *object3
+    z: 
+      - *object3
+    y: 
+      - 
+        as: sff
+        f:  34
+      - 
+        as: sfdf
+        f:  35
+      - 
+        as: sasff
+        f:  37
+- 
+  f: *object3
+

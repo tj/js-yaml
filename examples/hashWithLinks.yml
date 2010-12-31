@@ -1,0 +1,10 @@
+---
+  users:
+    greg: &greg
+      name: greg
+      age: 31
+      email: 'isimpl@gmail.com'
+    dotmaster: *greg
+    ted: { name: ted, age: 32, email: ted@tedtalks.com }
+  something:
+    blah: 19

@@ -1,7 +1,8 @@
 
 var path = process.argv[2],
     fs = require('fs'),
-    yaml = require('../lib/yaml')
+    yaml = require('../lib/yaml'),
+    sys = require('sys');
     
 if (!path)
   throw new Error('provide path to yaml file')
@@ -9,4 +10,4 @@ if (!path)
 console.log('\n')
 console.log(fs.readFileSync(path).toString())
 console.log('\noutputs:\n')
-console.log(yaml.eval(fs.readFileSync(path).toString()))
+console.log(sys.inspect(yaml.eval(fs.readFileSync(path).toString()),true,20))
