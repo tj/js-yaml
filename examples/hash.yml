@@ -8,5 +8,6 @@
       name: 'bob'
       age: 27
     ted: { name: ted, age: 32, email: ted@tedtalks.com }
-  something:
-    blah: 19
+  country:
+    name: Österreich
+    website: http://en.wikipedia.org/wiki/Austria
