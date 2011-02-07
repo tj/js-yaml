@@ -6,7 +6,10 @@ var path = process.argv[2],
 if (!path)
   throw new Error('provide path to yaml file')
 
-console.log('\n')
-console.log(fs.readFileSync(path).toString())
-console.log('\noutputs:\n')
-console.log(yaml.eval(fs.readFileSync(path).toString()))
+fs.readFile(path, function(err, fileContents) {
+  fileContents = fileContents.toString()
+  console.log('\n')
+  console.log(fileContents)
+  console.log('\noutputs:\n')
+  console.log(yaml.eval(fileContents))
+})
