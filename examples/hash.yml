@@ -16,3 +16,5 @@
   brackets:
     square: Square [brackets] can go in the middle of strings
     squiggle: Squiggle {brackets} can also go in the middle of strings!
+    extrasquare: [Scratch that] brackets can go at the beginning as long as they close and have text after.
+    extrasquiggle: {Scratch that} squigs can go at the beginning also!
