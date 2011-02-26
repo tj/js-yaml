@@ -11,3 +11,8 @@
   country:
     name: Österreich
     website: http://en.wikipedia.org/wiki/Austria
+  space:
+    description: space, the final frontier
+  brackets:
+    square: Square [brackets] can go in the middle of strings
+    squiggle: Squiggle {brackets} can also go in the middle of strings!
