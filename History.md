@@ -1,4 +1,9 @@
 
+0.2.2 / 2011-08-31 
+==================
+
+  * Made it so the first indentation in the input determines the indentation ammount (instead of it being statically set to 2 spaces) [joelverhagen]
+
 0.2.1 / 2011-05-22 
 ==================
 
