@@ -1,4 +1,11 @@
 
+0.2.3 / 2011-12-05 
+==================
+
+  * Added a "null.yaml" test case in the examples.
+  * Added support for NULL values.
+  * Fixed a global leak
+
 0.2.2 / 2011-08-31 
 ==================
 
